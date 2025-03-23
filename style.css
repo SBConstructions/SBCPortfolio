@@ -1,0 +1,127 @@
+/* Basic reset */
+body, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Gallery Section */
+.project-gallery {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Section */
+/* Carousel Section */
+.project-carousel {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Hide extra content */
+  }
+  
+  .carousel {
+    position: relative;
+  }
+  
+  .carousel-images {
+    display: flex; /* Use flexbox for horizontal layout */
+    transition: transform 0.5s ease-in-out;
+    width: 600%; /* Since there are 6 images, we will make the container width 6x the width of one image */
+  }
+  
+  .carousel-images img {
+    width: 100%; /* Make sure each image takes up 100% of the container */
+    height: 400px; /* Standard height for carousel images */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+    border-radius: 5px;
+  }
+  
+  /* Navigation buttons */
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+ /* Navbar container */
+nav {
+    background: #1E3A5F;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a:hover {
+    color: #C9A227; /* Gold hover effect */
+}
+
+/* Left section containing the "Home" link */
+.nav-links-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Center section containing the company name */
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Makes the company name take up remaining space */
+    display: flex;
+    justify-content: center; /* Centers the text within the available space */
+}
+
+/* Right section containing other navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+body {
+    font-family: Garamond;
+}

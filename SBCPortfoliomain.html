@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Constructions</title>
+    <style>
+        body {
+            font-family:Garamond;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            background: url('https://www.transparenttextures.com/patterns/diagonal-stripes-light.png') repeat, linear-gradient(to top, #f9f9f9, #e0e0e0); /* Patterned background with gradient */
+        }
+        nav {
+            background: #1E3A5F;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            position: relative;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+        nav a:hover {
+    color: #C9A227; /* Gold hover effect */
+}
+        .company-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        header {
+            /* background: url('https://i.ibb.co/WvDgY2LJ/Gemini-Generated-Image-4rz11y4rz11y4rz1.jpg') no-repeat center/cover; */
+            background: url('https://i.ibb.co/WvDgY2LJ/Gemini-Generated-Image-4rz11y4rz11y4rz1.jpg') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            margin-top: 60px;
+            height: 541px;
+            
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            object-fit: contain;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: auto;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .image-section {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .image-section img {
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .services, .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .service-box {
+    width: 30%;
+    margin: 15px;
+    padding: 20px;
+    background: #F4F4F4;
+    border-radius: 5px;
+    position: relative; /* Ensure the pseudo-element is positioned relative to this */
+    overflow: hidden; /* To maintain border-radius on the pseudo-element */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px; /* Thickness of the left border */
+    height: 100%;
+    background: linear-gradient(180deg, #1E3A5F, #C9A227);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+        .portfolio-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px; /* Thickness of the left border */
+    height: 100%;
+    background: linear-gradient(180deg, #1E3A5F, #C9A227);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+        .portfolio-item {
+    width: 25%;
+    margin: 15px;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .portfolio-item:hover, .service-box:hover {
+    transform: scale(1.1); /* Expands the box without affecting layout */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for effect */
+    background: #EAEAEA; /* Slightly darker gray */
+    border-left-color: #C9A227;
+  }
+
+  .portfolio-info {
+    
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    max-height: 370px; /* Adjust as needed */
+  }
+
+  .portfolio-info a {
+    display: block;
+    margin-top: 10px;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .portfolio-info a:hover {
+    text-decoration: underline;
+  }
+        .contact {
+            background: #222;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .portfolio-info img {
+    /*width: 100%; /* Adjust width */
+    max-height: 170px; /* Set a max height */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 10px; /* Space below image */
+    object-fit: cover;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.portfolio-item:hover .portfolio-info img {
+    opacity: 1; /* Show image on hover */
+}
+
+#contact {
+    background: #222222;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    background: url('https://www.transparenttextures.com/patterns/black-tie.png') repeat, linear-gradient(to top, #222222, #111111);
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <b><div class="company-name" style="font-family: Lucida Fax;">S B Constructions</div></b>
+        <div class="nav-links">
+           <b><a href="#about" style="font-family: Californian FB;">About Us</a></b>
+            <b><a href="#services" style="font-family: Californian FB;">Services</a></b>
+            <b><a href="#portfolio" style="font-family: Californian FB;">Portfolio</a></b>
+            <b><a href="#contact" style="font-family: Californian FB;">Contact</a></b>
+        </div>
+    </nav>
+    
+    <header>
+        
+        <img style="left: 400px;top:40px;height: 150px;width: 200px;" src="C:\Users\bhara\Downloads\Screenshot_2025-03-05_191951-removebg-preview.png" alt="Company Logo" class="logo">
+        <h1 style="position: relative;top:-170px;left: -360px;font-size:60px;color: #222;">S B Constructions</h1>
+        <p style="position: relative;top:-230px;left:-350px;color: #222;font-size: 18px;font-family: Lucida Calligraphy;">Building the Future, One Project at a Time</p>
+    </header>
+    
+   
+    
+    <section class="container" id="about">
+        <h2 style="font-family: Lucida Calligraphy;">About Us</h2>
+        <!-- <p>SB Constructions has been providing top-quality building services for over 20 years.</p> -->
+        <p style="font-size: 20px;">At <b>S B Constructions</b>, we specialize in crafting high-quality residential, commercial, and industrial spaces, with a strong focus on residential projects. From masonry and plumbing to electrical, tile laying, fabrication, and interiors, we handle every aspect of construction with precision and expertise.
+            Whether you're building from the ground up, renovating, or enhancing interiors, we ensure a seamless and hassle-free experience. With a commitment to quality, durability, and modern craftsmanship, SB Constructions is your trusted partner in bringing your vision to life.</p><br>
+            <h2 style="font-family: Lucida Calligraphy;">Meet the Founder</h2>
+    <img src="C:\Users\bhara\OneDrive\Desktop\WhatsApp_Image_2025-03-05_at_20.25.09-removebg-preview.png" alt="Founder Image" style="width:150px; height:150px; border-radius:60%;border-color: #222;border: 2px solid;object-fit: cover;overflow: hidden;">
+    <p style="font-size: 20px;"><b>Mr. Hanumanthappa D B</b>, with over 20 years of experience in construction, has led S B Constructions to success. Holding a Bachelors Degree, he specializes in Civil Engineering.</p>
+        </section>
+    
+    <section class="container" id="services">
+        <h2 style="font-family: Lucida Calligraphy;">Our Services</h2>
+        <div class="services">
+           <div class="service-box"><b>Residential Construction</b></div>
+            <div class="service-box"><b>Commercial Projects</b></div>
+            <div class="service-box"><b>Industrial Projects</b></div>
+            <div class="service-box"><b>Renovations & Remodeling</b></div>
+        </div>
+    </section>
+    
+    <section class="container" id="portfolio">
+        <h2 style="font-family: Lucida Calligraphy;">Portfolio</h2>
+        <div class="portfolio">
+            <div class="portfolio-item">
+              <b><p>Residential Project at ISRO Layout</p></b>
+              <div class="portfolio-info">
+                <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\isrolayoutext.jpeg" alt="Project Image">
+                <p>Constructed a residential home for Mr. Santosh at ISRO Layout, Bangalore, with a project cost of ₹1,00,00,000.</p>
+                <p>Architect: Satish, RSA Architects, Bengaluru</p>
+                <a href="projectisrolayout.html">View Photos</a>
+              </div>
+            </div>
+            <div class="portfolio-item">
+              <b><p>Residential Project at Jakkur</p></b>
+              <div class="portfolio-info">
+                <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\jakkuravinash.jpeg" alt="Project Image">
+                <p>Residential Project for Avinash at Jakkur, Bengaluru </p>
+                <p>Architect: Naveen, Envisage</p>
+                <a href="project2.html">View Photos</a>
+              </div>
+            </div>
+            <!-- <div class="portfolio-item">
+             <b> <p>Industrial Project at Ranebennur</p></b>
+              <div class="portfolio-info">
+                <p>Constructed Effluent Treatment Plant for Venkateshwara Hatcheries Pvt Ltd. Project cost was ₹1,25,00,000</p>
+                <a href="project3.html">View Photos</a>
+              </div>
+            </div> -->
+            <div class="portfolio-item">
+                <b><p>Residential Project at Upkar Layout</p></b>
+                <div class="portfolio-info">
+                  <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\madhucb.jpeg" alt="Project Image">
+                  <p>Project for Mrs. Madhu C B</p>
+                  <p>Architect: Prashanth, Naik Associates</p>
+                  <a href="project3.html">View Photos</a>
+                </div>
+              </div>
+            <div class="portfolio-item">
+                <b><p>Residential Project at Devanahalli</p></b>
+                <div class="portfolio-info">
+                  <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\devanahalli.jpg" alt="Project Image">
+                  <p>Project for Dr. Aravindh</p>
+                  <p>Architect: Mahan Architects</p>
+                  <a href="project3.html">View Photos</a>
+                </div>
+              </div>
+              <div class="portfolio-item">
+               <b> <p>Residential Project at Dibbadahalli</p></b>
+                <div class="portfolio-info">
+                    <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\dibbadahallivilla.jpeg" alt="Project Image">
+                  <p>We built a luxurious villa in Dibbadahalli featuring a landscaped garden, spacious parking, and a well-designed interior. The home includes multiple bedrooms, a pooja room, a study, and an open terrace, offering both comfort and functionality.</p>
+                  <p>Architect: Prashanth, Naik Associates</p>
+                  <a href="project3.html">View Photos</a>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <b> <p>Residential Project at JP Nagar</p></b>
+                 <div class="portfolio-info">
+                    <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\images\ushaharishjpnagar.jpg" alt="Project Image">
+                   <p>Residential Project for Usha Harish</p>
+                   <p>Architect: Snehal, Paper Planes Architects</p>
+                   <a href="project3.html">View Photos</a>
+                 </div>
+               </div>
+          </div>
+          <div style="text-align: center; margin-top: 20px;">
+            <a href="moreprojects.html">
+                <button style="background-color: #1E3A5F; color: white; padding: 10px 20px; font-size: 18px;font-family:Garamond; border: none; border-radius: 5px; cursor: pointer; transition: color 0.3s ease;" 
+                    onmouseover="this.style.color='#C9A227'" 
+                    onmouseout="this.style.color='white'">
+                    <b>View More Projects</b>
+                </button>
+            </a>
+        </div>
+        
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: sbc_db@yahoo.co.in | Phone: +91 9845696690</p>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
