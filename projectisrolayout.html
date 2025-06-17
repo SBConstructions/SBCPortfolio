@@ -5,50 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Photos - Residential Project at Kurubarahalli</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80%;
+      animation: zoom 0.3s;
+    }
+
+    @keyframes zoom {
+      from {transform: scale(0.5)}
+      to {transform: scale(1)}
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
+
+    /* Optional: Make gallery images look clickable */
+    .gallery img {
+      cursor: pointer;
+      max-width: 350px;
+      margin: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .zoom-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.zoom-wrapper img {
+  display: block;
+  width: 220px;              /* fixed width */
+  height: 300px;             /* fixed height */
+  object-fit: cover;         /* keeps image aspect ratio */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.zoom-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+.zoom-text {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.zoom-wrapper:hover .zoom-text {
+  opacity: 1;
+}
+
+  </style>
 </head>
 <body>
   <nav>
     <div class="nav-links-left">
-      <b><a href="index.html">Home</a></b>
-  </div>
+      <b><a href="SBCPortfoliomain.html">Home</a></b>
+    </div>
     <b><div class="company-name">SB CONSTRUCTIONS</div></b>
     <div class="nav-links">
-       <b><a href="index.html">About Us</a></b>
-        <b><a href="index.html">Services</a></b>
-        <b><a href="index.html">Portfolio</a></b>
-        <b><a href="index.html">Contact</a></b>
-        
+      <b><a href="#about">About Us</a></b>
+      <b><a href="#services">Services</a></b>
+      <b><a href="#portfolio">Portfolio</a></b>
+      <b><a href="#contact">Contact</a></b>
     </div>
-</nav>
+  </nav>
+
   <section class="project-gallery">
-    <b><p style="top:35px;position: relative;font-size:xx-large;">INTERIOR</p></b><br><br>
-    <div class="gallery">
-      <img src="images\IMG20240404151156.jpg" alt="Project Photo 1">
-      <img src="images\IMG20240330164718.jpg" alt="Project Photo 2">
-      <img src="images\IMG20240404151156.jpg" alt="Project Photo 3">
-      <img src="images\IMG20240330164718.jpg" alt="Project Photo 4">
-      <img src="images\IMG20240404151156.jpg" alt="Project Photo 5">
-      <img src="images\IMG20240330164718.jpg" alt="Project Photo 6">
+  <b><p style="top:35px;position: relative;font-size:xx-large;"></p></b><br><br>
+  <div class="gallery">
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\Downloads\IMG20240404151156.jpg" alt="Project Photo 1">
+      <div class="zoom-text">Zoom In</div>
     </div>
-  </section>
-
-  <!-- <section class="project-carousel">
-    <h2>Interactive Carousel</h2>
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="C:\Users\bhara\Downloads\IMG20240404151156.jpg" alt="Project Photo 1">
-        <img src="C:\Users\bhara\Downloads\IMG20240330164718.jpg" alt="Project Photo 2">
-        <img src="C:\Users\bhara\Downloads\IMG20240404151156.jpg" alt="Project Photo 3">
-        <img src="C:\Users\bhara\Downloads\IMG20240330164718.jpg" alt="Project Photo 4">
-        <img src="C:\Users\bhara\Downloads\IMG20240404151156.jpg" alt="Project Photo 5">
-        <img src="C:\Users\bhara\Downloads\IMG20240330164718.jpg" alt="Project Photo 6">
-      </div>
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\Downloads\IMG20240330164718.jpg" alt="Project Photo 2">
+      <div class="zoom-text">Zoom In</div>
     </div>
-  </section>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is1.jpg" alt="Project Photo 3">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is2.jpg" alt="Project Photo 4">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is3.jpg" alt="Project Photo 5">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is4.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is5.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is6.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is7.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is8.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is9.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is10.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is11.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is12.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is13.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is14.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
+    <div class="zoom-wrapper">
+      <img src="C:\Users\bhara\OneDrive\Desktop\Dad's Portfolio\IsroLayout\is15.jpg" alt="Project Photo 6">
+      <div class="zoom-text">Zoom In</div>
+    </div>
 
-  <script src="script.js"></script> -->
 
+  </div>
+</section>
+
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const images = document.querySelectorAll(".gallery img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
